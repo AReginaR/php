@@ -30,10 +30,13 @@ function f($text){
     foreach (generator($text, $counter) as $value){
         $out .= $value;
     }
-    echo 'line: '.$out.' count: '.$counter;
+    return 'line: '.$out.' count: '.$counter;
 }
+
 if(isset($_REQUEST['str'])){
     $text = $_REQUEST['str'];
-    f($text);
+    echo f($text);
+} else {
+    include 'task2.html';
 }
 
