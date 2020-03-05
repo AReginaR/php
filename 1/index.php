@@ -1,6 +1,12 @@
 <?php
-$text = $_REQUEST['code'];
-$str = $_REQUEST['str'];
+
+if (isset($_REQUEST['code'])) {
+    $text = $_REQUEST['code'];
+    $str = $_REQUEST['str'];
+} else {
+    include 'index.html';
+}
+
 $arr = [];
 $arr[0] = 0;
 $cell = 0;
