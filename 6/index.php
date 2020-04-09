@@ -11,15 +11,17 @@ $file_name = $array_ini['main']['filename'];
 
 if(file_exists($file_name)) {
     $file_list = file($file_name);
+} else{
+    echo "File not found";
 }
 foreach ($file_list as $value){
     $rule = substr($value, 0, 3);
     $str = trim(substr($value, 3));
 
     if($rule === $first_rule_symbol){
-        if($first_rule){
+        if($first_rule === "true"){
             echo strtoupper($str).'<br/>';
-        } else {
+        } else if($first_rule === "false"){
             echo strtolower($str).'<br/>';
         }
     } else if ($rule === $second_rule_symbol){
