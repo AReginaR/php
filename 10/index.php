@@ -13,8 +13,9 @@ spl_autoload_register(function ($classname){
 $myclass = new GenerateExceptions();
 for($i = 1; $i < 5; $i++){
     $name = "f".$i;
+    $x = random_int(-20, 20);
     try {
-        $myclass->$name();
+        $myclass->$name($x);
     } catch (Exception1 $e){
         echo $e->getMessage()."\n";
     } catch (Exception2 $e){
