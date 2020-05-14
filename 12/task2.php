@@ -8,12 +8,12 @@
 
 <form action="index.php" method="get"">
     <label>
-        <input type="text" name="str" placeholder="Введите строку" value="
+        <input type="text" name="str" value="
          <?php if(isset($_COOKIE["cookie"])){
              echo $_COOKIE["cookie"];
          }?>">
     </label>
-    <input type="submit" name="btn" value="Отправить">
+    <input type="submit" name="btn" value="Run">
 </form>
 </body>
 </html>

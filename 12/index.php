@@ -1,10 +1,13 @@
 <?php
 require_once 'generator.php';
+session_start();
 
-if (isset($_REQUEST['btn'])){
+if (isset($_REQUEST['btn'])) {
     $str = $_REQUEST['str'];
-    if(!isset($_COOKIE['cookie'])){
-        setcookie("cookie", $str, time()+3600);
+    if (!isset($_COOKIE['cookie'])) {
+        setcookie("cookie", $str, time() + 3600);
         $_COOKIE["cookie"] = $str;
+    } else {
+        header("Location /index.php?str=$str&btn=Run");
     }
 }
